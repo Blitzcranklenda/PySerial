@@ -1,0 +1,19 @@
+import serial
+
+ser = serial.Serial(port='/dev/ttyS0',baudrate=9600,parity=serial.PARITY_ODD,stopbits=serial.STOPBITS_TWO,bytesize=serial.SEVENBITS)
+
+if ser.isOpen():
+    print('Opened!')
+else:
+    print('Closed!')
+ser.close()
+
+command = input('Entrar com um comando\n 1 - Abrir Shutter\n 2 - Fechar Shutter\n 3 - Sair\n')
+
+if command == '1':
+    print("Shutter Opened!")
+if command == '2':
+    print('Shutter Closed!')
+if command == '3':
+    exit()
+
